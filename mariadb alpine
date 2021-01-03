@@ -1,0 +1,17 @@
+mysql:
+  image: cryptoplay/alpine-mariadb
+  ports:
+  - 9202:3306
+  labels:
+    traefik.enable: 'false'
+  environment:
+    MYSQL_ROOT_PASSWORD: 'secret'
+    MYSQL_DATABASE: 'percobaan'
+    MYSQL_USER: 'abdul'
+    MYSQL_PASSWORD: 'secret'
+  log_opt:
+    max-size: '50m'
+  restart: 'no'
+  read_only: true
+  cpu_shares: 512
+  mem_limit: 268435456
